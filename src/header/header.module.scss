@@ -1,0 +1,166 @@
+.mainPanel {
+    position: relative;
+
+    width: 1440px;
+    height: 134.21px;
+    left: 0px;
+    top: 0px;
+
+    background: #FFFAF2;
+    box-shadow: -7px 7px 25px rgba(0, 0, 0, 0.25);
+
+    .searchPanel {
+        position: absolute;
+        width: 525px;
+        height: 73px;
+        left: 15px;
+        top: 31px;
+
+        .txt {
+            position: absolute;
+            width: 374px;
+            height: 53px;
+            left: 28px;
+            top: 11px;
+        }
+        .icon {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 413px;
+            top: 21px;
+        }
+    }
+
+    .logo {
+        position: absolute;
+        width: 90px;
+        height: 104.21px;
+        left: 675px;
+        top: 15px;
+    }
+
+    .buttonDiv {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        
+        position: absolute;
+        width: 523px;
+        height: 92px;
+        left: 882px;
+        top: 21px;
+
+        .norm {
+            position: static;
+            height: 74px;
+            left: 0px;
+            top: 9px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 20px;
+            line-height: 21px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            color: #000000;
+
+            margin: 0px, 11px;
+
+            cursor: grab;
+
+            p {
+                margin: 10px;
+                width: max-content;
+            }
+        }
+
+        .login {
+            position: static;
+            width: 120px;
+            height: 73px;
+            left: 272px;
+            top: 9.5px;
+
+            border: 2px solid #000000;
+            box-sizing: border-box;
+                       
+            cursor: grab;
+            /* Inside Auto Layout */
+
+            margin: 0px 11px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            color: #000000;
+        }
+
+        .signup {
+            position: static;
+            width: 120px;
+            height: 73px;
+            left: 403px;
+            top: 9.5px;
+
+            background: #000000;
+
+            /* Inside Auto Layout */
+
+            margin: 0px 11px;
+            cursor: grab;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+
+            color: #FFFFFF;
+        }
+
+        .divider {
+            width: 2px;
+            height: 74px;
+            background-color: black;
+        }
+
+        .username {
+            width: 150px;
+            height: 92px;
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 21px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar {
+            width: 90px;
+            height: 90px;
+
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 180px;
+        }
+    }
+}

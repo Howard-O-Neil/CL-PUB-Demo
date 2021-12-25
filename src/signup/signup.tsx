@@ -2,11 +2,11 @@ import React, { ChangeEvent, FormHTMLAttributes, useContext } from "react";
 import styles from "./signup.module.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import logo_black from "../resource/img/Logo_Black.png"
-import happy_girl from "../resource/img/thumb_up_girl.png"
-import vector_9 from "../resource/img/vector_9.png"
-import mail from "../resource/img/email.png"
-import lock from "../resource/img/lock.png"
+const logo_black = "http://127.0.0.1:3001/img/Logo_Black.png"
+const happy_girl = "http://127.0.0.1:3001/img/thumb_up_girl.png"
+const vector_9 = "http://127.0.0.1:3001/img/vector_9.png"
+const mail = "http://127.0.0.1:3001/img/email.png"
+const lock = "http://127.0.0.1:3001/img/lock.png"
 import { Input, TextField } from "@mui/material";
 import { AppContext } from "@/AppContext";
 
@@ -31,16 +31,16 @@ const SignUp = () => {
 
             <div className={styles.formInput}>
                 <div className={styles.inputTxt}>
-                    <TextField style={{width: "100%" }} inputProps={{style: {fontSize: 20}}} InputLabelProps={{style: {fontSize: 20}}} type="text" id="standard-basic" label="Username" variant="standard" size="medium" />
+                    <TextField style={{width: "100%" }} autoComplete="off" inputProps={{style: {fontSize: 20}, autoComplete: "off"}} InputLabelProps={{style: {fontSize: 20}}} type="text" id="standard-basic" label="Username" variant="standard" size="medium" />
                 </div>
                 <div className={styles.inputTxt}>
-                    <TextField style={{width: "100%"}} type="text" id="standard-basic" label="Email" variant="standard" size="medium" />
+                    <TextField style={{width: "100%"}} autoComplete="off" inputProps={{style: {fontSize: 20}, autoComplete: "off"}} InputLabelProps={{style: {fontSize: 20}}} type="text" id="standard-basic" label="Email" variant="standard" size="medium" />
                 </div>
                 <div className={styles.inputTxt}>
-                    <TextField style={{width: "100%"}} type="password" id="standard-basic" label="Password" variant="standard" size="medium" />
+                    <TextField style={{width: "100%"}} autoComplete="off" inputProps={{style: {fontSize: 20}, autoComplete: "off"}} InputLabelProps={{style: {fontSize: 20}}} type="password" id="standard-basic" label="Password" variant="standard" size="medium" />
                 </div>
                 <div className={styles.inputTxt}>
-                    <TextField style={{width: "100%"}} type="password" id="standard-basic" label="Retype Password" variant="standard" size="medium" />
+                    <TextField style={{width: "100%"}} autoComplete="off" inputProps={{style: {fontSize: 20}, autoComplete: "off"}} InputLabelProps={{style: {fontSize: 20}}} type="password" id="standard-basic" label="Retype Password" variant="standard" size="medium" />
                 </div>
             </div>
 

@@ -1,0 +1,234 @@
+@import "@/global";
+
+.mainPanel {
+  background: #fffcf7;
+  height: max-content;
+
+  .headerMain {
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+    box-shadow: -7px 7px 25px rgba(0, 0, 0, 0.25);
+
+  }
+
+  .onTrend {
+    position: static;
+    width: fit-content;
+    padding: 10px;
+    height: fit-content;
+    // left: 35px;
+    // top: 177px;
+
+    margin: 0 auto;
+    border: 1px solid #898989;
+
+    .wrap {
+      position: static;
+
+      .header {
+        position: static;
+        
+        margin-left: 20px;
+        margin-bottom: 10px;
+
+        font-family: Roboto;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 40px;
+        line-height: 47px;
+        display: flex;
+        align-items: center;
+  
+        color: #010030;
+      }
+      
+      .listCourse {
+        position: static;
+        width: max-content;
+        height: fit-content;
+
+        margin: 0 auto 10px auto;
+
+        filter: drop-shadow(-4px 4px 4px rgba(0, 0, 0, 0.25));
+
+        .carousel {
+          @extend .carousel;
+        }
+      }
+  
+    }
+
+  }
+
+  .topMostPopular {
+    @extend .onTrend
+  }
+
+  .categoryThisWeek {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: static;
+    width: 483px;
+    height: 124px;
+    
+    margin: 0 auto;
+
+    .bigHead {
+      position: static;
+      position: static;
+      width: 483px;
+      height: 68px;
+      left: 0px;
+      top: 0px;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 70px;
+      line-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      color: #8b652d;
+    }
+
+    .smallHead {
+      position: static;
+      width: 483px;
+      height: 56px;
+      left: 0px;
+      top: 68px;
+
+      font-family: Roboto;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 45px;
+      line-height: 53px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      color: #705732;
+    }
+  }
+
+  .top6Cate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 42px 0px;
+
+    margin: 0 auto;
+
+    position: static;
+    width: 1345px;
+    height: fit-content;
+    left: 47.5px;
+    top: 1550px;
+
+    .wrap {
+      position: static;
+      width: fit-content;
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        padding: 0px 15px;
+  
+        position: relative;
+        
+        width: fit-content;
+        height: fit-content;
+  
+        margin: 25px 0px;
+  
+        .element {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 10px;
+  
+          position: static;
+          width: 350px;
+          height: 400px;
+          left: 0px;
+          top: 0px;
+  
+          background: #fffef6;
+          box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.25);
+  
+          /* Inside Auto Layout */
+  
+          margin: 0px 25px;
+  
+          .icon {
+            position: static;
+            width: 100px;
+            height: 100px;
+            left: 10px;
+            top: 10px;
+            margin: 5px 0px;
+          }
+  
+          .header {
+            position: static;
+            width: 100%;
+            height: fit-content;
+            left: 10px;
+            top: 170px;
+  
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 35px;
+            line-height: 48px;
+            display: flex;
+            align-items: center;
+  
+            color: #000000;
+  
+            margin: 0px 0px 5px 0;
+          }
+  
+          .txt {
+            position: static;
+            width: 100%;
+            height: fit-content;
+  
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 22px;
+  
+            color: #787878;
+  
+            margin: 0px 0px 5px 0;
+          }
+  
+          .rightArrow {
+            position: static;
+            width: 50px;
+            height: 50px;
+  
+            margin: 10px 0px 0px 0px;
+          }
+        }
+      }  
+    }
+  }
+
+    .footer {
+        position: static;
+    }
+}

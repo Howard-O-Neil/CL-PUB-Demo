@@ -1,17 +1,18 @@
 import React, { ChangeEvent, FormHTMLAttributes, useContext } from "react";
 import styles from "./signin.module.scss";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
 
-import logo_black from "../resource/img/Logo_Black.png"
-import happy_girl from "../resource/img/thumb_up_girl.png"
-import vector_9 from "../resource/img/vector_9.png"
-import mail from "../resource/img/email.png"
-import lock from "../resource/img/lock.png"
+const logo_black = "http://127.0.0.1:3001/img/Logo_Black.png"
+const happy_girl = "http://127.0.0.1:3001/img/thumb_up_girl.png"
+const vector_9 = "http://127.0.0.1:3001/img/vector_9.png"
+const mail = "http://127.0.0.1:3001/img/email.png"
+const lock = "http://127.0.0.1:3001/img/lock.png"
 import { TextField } from "@mui/material";
 import { AppContext } from "@/AppContext";
 
 const SignIn = () => {
     const [appState, dispatch] = useContext(AppContext)
+    const navigate = useNavigate()
 
   return (
     <div className={styles.mainPanel}>
@@ -32,13 +33,13 @@ const SignIn = () => {
                     <img className={styles.icon} src={mail}></img>
 
                     <div className={styles.inputTxt}>
-                    <TextField style={{width: "100%"}} inputProps={{style: {fontSize: 20}}} InputLabelProps={{style: {fontSize: 20}}} type="text" id="standard-basic" label="Email" variant="standard" />
+                    <TextField style={{width: "100%"}} autoComplete="off" inputProps={{style: {fontSize: 20}, autoComplete: "off"}} InputLabelProps={{style: {fontSize: 20}}} type="text" id="standard-basic" label="Email" variant="standard" />
                     </div>
                 </div>
                 <div className={styles.pass}>
                     <img className={styles.icon} src={lock}></img>
                     <div className={styles.inputTxt}>
-                        <TextField style={{width: "100%"}} inputProps={{style: {fontSize: 20}}} InputLabelProps={{style: {fontSize: 20}}} type="password" id="standard-basic" label="Password" variant="standard" />
+                        <TextField style={{width: "100%"}} autoComplete="off" inputProps={{style: {fontSize: 20}, autoComplete: "off"}} InputLabelProps={{style: {fontSize: 20}}} type="password" id="standard-basic" label="Password" variant="standard" />
                     </div>
                 </div>
             </div>
@@ -47,7 +48,11 @@ const SignIn = () => {
                 <p>Forgot Password?</p>
             </div>
 
-            <div className={styles.login}>
+            <div className={styles.login} onClick={() => {
+                dispatch({type: "update_login", value: undefined});
+                dispatch({type: "handle_close_signin", value: undefined});
+                navigate("/home");
+            }} >
                 <p>LOG IN</p>
             </div>
             <div className={styles.signup} onClick={() => dispatch({type: "handle_open_signup", value: undefined})}>

@@ -2,7 +2,7 @@ import React, { ChangeEvent, FormHTMLAttributes } from "react";
 import styles from "./footer.module.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import logo_black from "../resource/img/Logo_Black.png"
+const logo_black = "http://127.0.0.1:3001/img/Logo_Black.png"
 
 const Footer = () => {
   return (

@@ -4,11 +4,11 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AppProvider } from "./AppContext";
 import Footer from "./footer/footer";
 import Landing from "./landing/landing";
+import Home from "./home/home";
+import SearchRes from "./searchRes/searchRes";
+import CourseDetail from "./courseDetail/courseDetail";
 
-export const BACKEND_PUBLIC_API = "http://localhost:3002/sound-sharing-pub/v1"
-export const BACKEND_APP_API = "http://localhost:3002/sound-sharing/v1"
-export const CDN_API = "http://128.0.3.3:5001"
-export const HLS_API = "http://128.0.3.2/hls"
+export const CDN_API = "http://127.0.0.1:3001"
 
 const App = () => {
   return (
@@ -21,7 +21,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<div>Index Page, Please Leave</div>} />
             <Route path="/landing" element={<Landing />} />
-
+            <Route path="/home" element={<Home />} />
+            <Route path="/search" element={<SearchRes />} />
+            <Route path="/detail" element={<CourseDetail />} />
           </Routes>
         </AppProvider>
       </BrowserRouter>

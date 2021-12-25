@@ -4,96 +4,75 @@ export interface category_map_t {
   name: string;
 }
 
-import finance from "./resource/icon/finance.png";
-import computer_science from "./resource/icon/computer_science.png";
-import code from "./resource/icon/code.png";
-import data_science from "./resource/icon/data_science.png";
-import design from "./resource/icon/design.png";
-import multimedia from "./resource/icon/multimedia.png";
-import sale from "./resource/icon/sale.png";
-import cook from "./resource/icon/cook.png";
-import fitness from "./resource/icon/fitness.png";
-import health from "./resource/icon/health.png";
-import diet from "./resource/icon/diet.png";
-import sport from "./resource/icon/sport.png";
-import gym from "./resource/icon/gym.png";
-import game from "./resource/icon/game.png";
-import web from "./resource/icon/web.png";
-import mobile from "./resource/icon/mobile.png";
-import edit_video from "./resource/icon/edit_video.png";
-import ui from "./resource/icon/ui.png";
-import draw from "./resource/icon/draw.png";
-import marketing from "./resource/icon/marketing.png";
-
 export const CATEGORY_ICON_MAP_DB: Record<string, category_map_t> = {
-  "Finance": { name: "Finance", icon: finance, des: "lorem" },
-  "Computer Science": { name: "Computer Science", icon: computer_science, des: "lorem" },
-  "Code": { name: "Code", icon: code, des: "lorem", },
+  "Finance": { name: "Finance", icon: "http://127.0.0.1:3001/icon/finance.png", des: "lorem" },
+  "Computer Science": { name: "Computer Science", icon: "http://127.0.0.1:3001/icon/computer_science.png", des: "lorem" },
+  "Code": { name: "Code", icon: "http://127.0.0.1:3001/icon/code.png", des: "lorem", },
   "Data Science": {
-    name: "Data Science", icon: data_science, des: "lorem",
+    name: "Data Science", icon: "http://127.0.0.1:3001/icon/data_science.png", des: "lorem",
   },
   "Design": {
-    name: "Design", icon: design,
+    name: "Design", icon: "http://127.0.0.1:3001/icon/design.png",
     des: "lorem",
   },
   "Multimedia": {
-    name: "Multimedia", icon: multimedia,
+    name: "Multimedia", icon: "http://127.0.0.1:3001/icon/multimedia.png",
     des: "lorem",
   },
   "Sale": {
-    name: "Sale", icon: sale,
+    name: "Sale", icon: "http://127.0.0.1:3001/icon/sale.png",
     des: "lorem",
   },
   "Cooking": {
-    name: "Cooking", icon: cook,
+    name: "Cooking", icon: "http://127.0.0.1:3001/icon/cook.png",
     des: "lorem",
   },
   "Fitness": {
-    name: "Fitness", icon: fitness,
+    name: "Fitness", icon: "http://127.0.0.1:3001/icon/fitness.png",
     des: "lorem",
   },
   "Health": {
-    name: "Health", icon: health,
+    name: "Health", icon: "http://127.0.0.1:3001/icon/health.png",
     des: "lorem",
   },
   "Diet": {
-    name: "Diet", icon: diet,
+    name: "Diet", icon: "http://127.0.0.1:3001/icon/diet.png",
     des: "lorem",
   },
   "Sport": {
-    name: "Sport", icon: sport,
+    name: "Sport", icon: "http://127.0.0.1:3001/icon/sport.png",
     des: "lorem",
   },
   "Gymnastic": {
-    name: "Gymnastic", icon: gym,
+    name: "Gymnastic", icon: "http://127.0.0.1:3001/icon/gym.png",
     des: "lorem",
   },
   "Game Development": {
-    name: "Game Development", icon: game,
+    name: "Game Development", icon: "http://127.0.0.1:3001/icon/game.png",
     des: "lorem",
   },
   "Web Development": {
-    name: "Web Development", icon: web,
+    name: "Web Development", icon: "http://127.0.0.1:3001/icon/web.png",
     des: "lorem",
   },
   "Mobile Development": {
-    name: "Mobile Development", icon: mobile,
+    name: "Mobile Development", icon: "http://127.0.0.1:3001/icon/mobile.png",
     des: "lorem",
   },
   "Video Design": {
-    name: "Video Design", icon: edit_video,
+    name: "Video Design", icon: "http://127.0.0.1:3001/icon/edit_video.png",
     des: "lorem",
   },
   "UI": {
-    name: "UI", icon: ui,
+    name: "UI", icon: "http://127.0.0.1:3001/icon/ui.png",
     des: "lorem",
   },
   "Drawing": {
-    name: "Drawing", icon: draw,
+    name: "Drawing", icon: "http://127.0.0.1:3001/icon/draw.png",
     des: "lorem",
   },
   "Marketing": {
-    name: "Marketing", icon: marketing,
+    name: "Marketing", icon: "http://127.0.0.1:3001/icon/marketing.png",
     des: "lorem",
   },
 }

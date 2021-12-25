@@ -1,0 +1,506 @@
+.mainPanel {
+  background: #FFFCF7;
+
+  .headerMain {
+    position: sticky;
+    top: 0px;
+    z-index: 3;
+    box-shadow: -7px 7px 25px rgba(0, 0, 0, 0.25);
+  }
+
+  .bigFrame {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    width: 1328px;
+    height: max-content;
+
+    margin: 30px auto 100px auto;
+
+    .vidContent {
+      position: static;
+      width: 819px;
+      min-height: 215px;
+      height: max-content;
+
+      background-color: rgb(231,217,191,0.3);
+
+      /* Inside Auto Layout */
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+
+      margin: 0px 0px 19px 0px;
+
+        
+      .content {
+          width: 100%;
+          font-family: Montserrat;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 18px;
+            line-height: 30px;
+
+            display: flex;
+            align-items: center;
+
+            color: #000000;
+      }
+    }
+
+    .vidMain {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 0px;
+
+      position: static;
+      width: 100%;
+      height: max-content;
+      left: 0px;
+      top: 0px;
+
+      /* Inside Auto Layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+      margin: 19px 0px 5px 0px;
+
+      .description {
+        position: static;
+        width: 500px;
+        height: 460px;
+
+        /* Inside Auto Layout */
+
+        margin: 63px 10px 0px 20px;
+
+        background-color: rgb(231,217,191,0.3);
+
+        .aboutWrapper {
+          height: 350px;
+          padding: 0px 5px 5px 5px;
+          overflow-y: auto;
+          overflow-x: hidden;
+
+          .about {
+            text-align: left;
+
+            .title {
+              margin: 0 auto;
+              width: 80%;
+              text-align: center;
+              font-family: Roboto;
+              font-style: italic;
+              font-weight: bold;
+              font-size: 25px;
+            }
+
+            .author {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              justify-content: flex-start;
+              padding: 0px;
+
+              position: static;
+              margin: 5px 0px;
+
+              .icon {
+                position: static;
+                width: 50px;
+                height: 50px;
+
+                border-radius: 180px;
+
+                margin: 0px 7px;
+              }
+
+              .txt {
+                position: static;
+                width: max-content;
+                height: max-content;
+
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 10px;
+                /* identical to box height */
+
+                color: #000000;
+                margin: 0px 7px;
+              }
+            }
+
+            .description {
+              margin: 0px;
+              padding: 0px;
+              width: 100%;
+              margin-right: auto;
+              text-align: left;
+              font-size: 18px;
+              font-family: Roboto;
+              background-color: transparent;
+            }
+          }
+        }
+
+        .programWrapper {
+          height: 350px;
+          overflow-y: auto;
+          overflow-x: hidden;
+          
+          .program {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+
+            position: static;
+            width: 95%;
+            height: max-content;
+
+             margin: 5px auto 0px auto;
+
+             border-bottom: 0.5px solid black;
+
+            .header {
+              position: static;
+              width: 100%;
+              height: fit-content;
+
+              font-family: Montserrat;
+              font-style: normal;
+              font-weight: 500;
+              font-size: 20px;
+              line-height: 2px;
+              display: flex;
+              align-items: center;
+
+              color: #000000;
+
+              margin: 0px 0px 0px 0px;
+            }
+
+            .metric {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              justify-content: flex-start;
+              padding: 0px;
+
+              position: static;
+              width: 100%;
+              height: max-content;
+              margin: 0px 0px;
+            }
+          }
+        }
+
+        .reviewWrapper {
+          // display: flex;
+          // flex-direction: column;
+          // justify-content: center;
+          // align-items: flex-start;
+          height: 350px;
+          overflow-y: auto;
+          overflow-x: hidden;
+
+          .review {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+  
+            position: static;
+            width: 95%;
+            height: max-content;
+  
+            margin: 10px auto 0px auto;
+  
+            .author {
+              display: flex;
+              flex-direction: row;
+              align-items: flex-start;
+              padding: 0px;
+  
+              position: static;
+              width: 100%;
+              height: max-content;
+  
+              .icon {
+                position: static;
+                width: 30px;
+                height: 30px;
+                border-radius: 180px;
+  
+                /* Inside Auto Layout */
+  
+                margin: 0px 7px;
+              }
+  
+              .name {
+                position: static;
+                width: max-content;
+                height: 20px;
+  
+                font-family: Montserrat;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 18px;
+                display: flex;
+                align-items: center;
+                text-align: left;
+  
+                color: #000000;
+  
+  
+                /* Inside Auto Layout */
+  
+                margin: 0px 7px;
+              }
+  
+              /* Inside Auto Layout */
+            }
+            .comment {
+              position: static;
+              width: 100%;
+              height: fit-content;
+              font-family: Montserrat;
+              font-style: normal;
+              font-weight: normal;
+              font-size: 15px;
+              line-height: 18px;
+              display: flex;
+              align-items: flex-start;
+              
+              text-align: left;
+              color: #000000;
+              
+              
+              /* Inside Auto Layout */
+              
+              margin: 0px 0px;
+            }
+          }
+        }
+
+      }
+
+      .vidArea {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        padding: 0px;
+
+        position: static;
+        width: 819px;
+        height: max-content;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        /* Inside Auto Layout */
+        margin: 0px 10px 10px 0px;
+
+        .header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+
+          padding: 0px;
+
+          position: static;
+          width: 819px;
+          height: 38px;
+
+          /* Inside Auto Layout */
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+
+          margin: 10px 0px;
+
+          margin-bottom: 15px;
+
+          .join {
+            position: static;
+            width: 136px;
+            height: 38px;
+
+            background: #c38d3c;
+            border: 1px solid #ffffff;
+            box-sizing: border-box;
+            border-radius: 50px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            /* Inside Auto Layout */
+
+            // margin: 0px 15px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 29px;
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            color: #ffffff;
+          }
+
+          .text {
+            position: static;
+            width: 660px;
+            height: 29px;
+            left: 0px;
+            top: 0px;
+
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 25px;
+            line-height: 29px;
+            display: flex;
+            align-items: center;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            color: #000000;
+
+            // margin: 15px 0px;
+          }
+        }
+
+        .vid {
+          position: relative;
+          width: 819px;
+          height: 460px;
+            
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-end;
+  
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+          margin: 0px 0px;
+
+          background-color: black;
+
+          .toolBar {
+            position: absolute;
+            width: 720px;
+            height: 45px;
+
+            left: 49.5px;
+            top: 400px;
+
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(120px);
+
+            border-radius: 0px;
+
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+
+            .playBtn {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                margin-left: 10px;
+            }
+
+            .progressBarParent {
+                width: 550px;
+                height: 30px;
+
+                background: rgba(255, 255, 255, 0.25);
+
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                margin-right: 10px;
+    
+                .progressBarChild {
+                    width: 30%;
+                    height: 30px;
+
+                    background: #AB8751;
+
+                    border-radius: 0px;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+                }
+
+                .time {
+                    position: absolute;
+                    margin-left: 5px;
+                    font-family: Roboto;
+                    font-weight: lighter;
+                    font-size: 15px;
+                    line-height: 0px;
+                    /* identical to box height */
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-start;
+
+                    width: 200px;
+
+                    color: #FFFFFF;
+                }
+            }
+
+
+          }
+        }
+
+        .flexReviews {
+          /* Auto Layout */
+
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-end;
+          padding: 0px;
+
+          position: static;
+          width: 165px;
+          height: 25px;
+
+          margin: 8px 0px;
+
+          flex: none;
+          order: 2;
+          flex-grow: 0;
+          margin: 15px 0px;
+
+          font-family: Roboto;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 25px;
+          line-height: 29px;
+
+          color: #DC5485;
+
+          
+        }
+      }
+    }
+  }
+}
