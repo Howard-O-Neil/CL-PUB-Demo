@@ -1,0 +1,24 @@
+.mainPanel {
+    height: 99.9%;
+    background-color: gainsboro;
+    color: white;
+
+    display: flex;
+    
+    .sidePanel {
+        height: 100%;
+        width: 30%;
+
+        background-color: gainsboro;
+        padding-right: 5px;
+    }
+
+    .infoPane {
+        height: 100%;
+        width: 65%;
+
+        padding-left: 15px;
+        background-color: white;
+        color: black;
+    }
+}

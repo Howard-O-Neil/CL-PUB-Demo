@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormHTMLAttributes } from "react";
+import React, { ChangeEvent } from "react";
 import styles from './App.module.scss';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { AppProvider } from "./AppContext";
@@ -7,8 +7,9 @@ import Landing from "./landing/landing";
 import Home from "./home/home";
 import SearchRes from "./searchRes/searchRes";
 import CourseDetail from "./courseDetail/courseDetail";
+import { ClPub } from "./clpub/clpub";
 
-export const CDN_API = "http://127.0.0.1:3001"
+export const API_PREFIX = "http://34.81.149.110:8087/"
 
 const App = () => {
   return (
@@ -17,13 +18,14 @@ const App = () => {
 
       {/* <MainGrid childElement={<SignIn />}/> */}
       <BrowserRouter>
-        <AppProvider>
+        <AppProvider children={undefined}>
           <Routes>
-            <Route path="/" element={<div>Index Page, Please Leave</div>} />
-            <Route path="/landing" element={<Landing />} />
+            <Route path="/" element={<div>Index page, please leave</div>} />
+            <Route path="/cl" element={<ClPub />} />
+            {/* <Route path="/landing" element={<Landing />} />
             <Route path="/home" element={<Home />} />
             <Route path="/search" element={<SearchRes />} />
-            <Route path="/detail" element={<CourseDetail />} />
+            <Route path="/detail" element={<CourseDetail />} /> */}
           </Routes>
         </AppProvider>
       </BrowserRouter>

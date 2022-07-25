@@ -7,7 +7,7 @@ const DESTINATION = path.resolve(__dirname, "dist");
 module.exports = (env) => {
   production_val = false
 
-  if (env.production) 
+  if (env.production)
     production_val = true
   
   return {

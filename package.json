@@ -1,5 +1,5 @@
 {
-    "name": "design-ui-course",
+    "name": "CL-PUB demo",
     "version": "0.1.0",
     "description": "",
     "main": "index.js",
@@ -46,6 +46,7 @@
         "@emotion/styled": "^11.6.0",
         "@fortawesome/fontawesome-free": "^5.15.4",
         "@fullpage/react-fullpage": "^0.1.19",
+        "@mui/icons-material": "^5.8.4",
         "@mui/material": "^5.2.4",
         "@types/faker": "^5.5.9",
         "@types/hls.js": "^1.0.0",
