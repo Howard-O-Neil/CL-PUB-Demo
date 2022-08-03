@@ -11,6 +11,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { AuthorRec } from "@/author_rec/author_rec";
 import { OrgRec } from "@/org_rec/org_rec";
 import { PaperRec } from "@/paper_rec/paper_rec";
+import { GlobModal } from "@/glob_modal/glob_modal";
 
 interface AuthorSearch {
     author_id: string;
@@ -27,7 +28,7 @@ const default_author_recommend = [
     { author_id: "ID1", author_name: "Author-1", author_rank: 999 },
     { author_id: "ID2", author_name: "Author-2", author_rank: 999 },
     { author_id: "ID3", author_name: "Author-3", author_rank: 999 },
-    { author_id: "ID4", author_name: "...", author_rank: 999},
+    { author_id: "ID4", author_name: "...", author_rank: 999 },
     { author_id: "ID5", author_name: "Author-N", author_rank: 999 },
 ]
 
@@ -41,6 +42,7 @@ const default_author_search = [
 
 export const ClPub = () => {
     const [expanded, setExpanded] = React.useState<string | false>('panel3');
+    const [appState, dispatch] = useContext(AppContext);
 
     const handleChange = (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
         setExpanded(newExpanded ? panel : false);
@@ -86,7 +88,7 @@ export const ClPub = () => {
 
                     <AccordionDetails>
                         <Typography>
-                            Searching and browsing for papers. The system will search and recommend top 50 authors based on what your clicked. 
+                            Searching and browsing for papers. The system will search and recommend top 50 authors based on what your clicked.
                         </Typography>
                     </AccordionDetails>
                 </Accordion>
@@ -98,15 +100,23 @@ export const ClPub = () => {
                     CLPUB System
                 </Typography>
 
-                {expanded == "panel3" &&
-                    <AuthorRec />
+                {!appState.gloab_modal &&
+                    <>
+                        {expanded == "panel3" &&
+                            <AuthorRec />
+                        }
+                        {expanded == "panel1" &&
+                            <OrgRec />
+                        }
+                        {expanded == "panel2" &&
+                            <PaperRec />
+                        }
+                    </>
                 }
-                {expanded == "panel1" &&
-                    <OrgRec />
+                {appState.gloab_modal &&
+                    <GlobModal />
                 }
-                {expanded == "panel2" &&
-                    <PaperRec />
-                }
+
 
             </div>
         </div>

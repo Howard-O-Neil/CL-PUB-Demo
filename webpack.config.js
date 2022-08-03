@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin")
 
 const ROOT = path.resolve(__dirname, "src");
 const DESTINATION = path.resolve(__dirname, "dist");
@@ -51,6 +52,8 @@ module.exports = (env) => {
       // },
       compress: true,
       port: 3000,
+
+      // SPA
       historyApiFallback: true,
     },
 
@@ -129,6 +132,16 @@ module.exports = (env) => {
       new HtmlWebpackPlugin({
         template: path.join(__dirname, "src", "template.html"),
       }),
+
+      // SPA build
+      new CopyPlugin({
+        patterns: [
+          {
+            from: path.join(__dirname, "src", "template.html"),
+            to: path.join(__dirname, "dist", "200.html")
+          }
+        ]
+      })
     ],
   }
 };

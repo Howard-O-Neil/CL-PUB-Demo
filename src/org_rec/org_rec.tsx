@@ -1,7 +1,7 @@
 import styles from "./org_rec.module.scss"
 import React, { ChangeEvent, useContext, useEffect, useRef, useState } from "react";
 import { BrowserRouter, Route, Routes, useNavigate } from "react-router-dom";
-import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, Box, Button, Card, CardActionArea, CardActions, CardContent, Chip, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, MenuItem, Pagination, Paper, Select, Stack, Switch, TextField, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Autocomplete, Box, Button, Card, CardActionArea, CardActions, CardContent, Chip, CircularProgress, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, MenuItem, Pagination, Paper, Select, Stack, Switch, TextField, Typography } from "@mui/material";
 import { AppContext } from "@/AppContext";
 import { fontSize, style } from "@mui/system";
 import axios from "axios";
@@ -29,6 +29,9 @@ export const OrgRec = () => {
     const [isRecommend, setIsRecommend] = useState(false)
     const [searchOrgTxt, setSearchOrgTxt] = useState("")
 
+    const [searchLoading, setSearchLoading] = useState(false);
+    const [recommendLoading, setRecommendLoading] = useState(false)
+
     const on_org1_click = (x) => {
         if (x != appState.org_2) {
             dispatch({
@@ -50,8 +53,7 @@ export const OrgRec = () => {
     }
 
     const on_recommend_click = () => {
-        console.log(appState.org_1)
-        console.log(appState.org_2)
+        setRecommendLoading(true)
 
         axios.post(`${API_PREFIX}recommend_org`, {
             "org1": appState.org_1,
@@ -62,6 +64,7 @@ export const OrgRec = () => {
                 value: message.data["result"],
                 callback: () => null
             })
+            setRecommendLoading(false)
             setIsRecommend(true)
         })
     }
@@ -71,13 +74,16 @@ export const OrgRec = () => {
     }
 
     const on_search_click = () => {
-        axios.get(`${API_PREFIX}search_org`, {params: {name: searchOrgTxt}})
+        setSearchLoading(true)
+
+        axios.get(`${API_PREFIX}search_org`, { params: { name: searchOrgTxt } })
             .then(message => {
                 dispatch({
                     type: "set_search_org",
                     value: message.data["result"],
                     callback: () => null
                 })
+                setSearchLoading(false)
             })
     }
 
@@ -114,9 +120,18 @@ export const OrgRec = () => {
                         </Box>
 
                         <br></br>
-                        <Button variant="contained"
-                            disabled={appState.org_1 == "" || appState.org_2 == ""}
-                            onClick={() => on_recommend_click()}>Recommend</Button>
+                        <Box sx={{ display: "flex", alignItems: "center" }}>
+                            <Button variant="contained"
+                                disabled={appState.org_1 == "" || appState.org_2 == ""}
+                                sx={{marginRight: "10px"}}
+                                onClick={() => on_recommend_click()}>Recommend</Button>
+
+                            {recommendLoading &&
+                                <CircularProgress size={24} />
+
+                            }
+                        </Box>
+
                     </Paper>
 
                     <br></br>
@@ -131,16 +146,22 @@ export const OrgRec = () => {
                                 value={searchOrgTxt}
                                 onChange={on_search_change} />
 
-                            <Button variant="outlined" sx={{ marginLeft: '10px' }}
-                                onClick={() => on_search_click()}>
-                                Search
-                            </Button>
+                            <Box sx={{ display: "flex", alignItems: "center" }}>
+                                <Button variant="outlined" sx={{ marginLeft: '10px', marginRight: '10px' }}
+                                    onClick={() => on_search_click()}>
+                                    Search
+                                </Button>
+
+                                {searchLoading &&
+                                    <CircularProgress size={24} />
+                                }
+                            </Box>
 
                         </Box>
 
                         <List>
                             {[...appState.org_search].map((x, i) => (
-                                <ListItem >
+                                <ListItem disablePadding>
                                     <ListItemIcon>
                                         <BusinessIcon />
                                     </ListItemIcon>
@@ -184,19 +205,19 @@ export const OrgRec = () => {
                             {[...appState.among_org_rank].map((x, i) => (
                                 <ListItem disablePadding>
                                     <ListItemButton>
-                                        <ListItemIcon sx={{width: '5%'}}>
+                                        <ListItemIcon sx={{ width: '5%' }}>
                                             <AccountBoxIcon color="success" />
                                         </ListItemIcon>
-                                        <ListItemText sx={{width: '30%'}} primary={`${x.author_name_1}`} >
+                                        <ListItemText sx={{ width: '30%' }} primary={`${x.author_name_1}`} >
                                         </ListItemText>
 
-                                        <ListItemIcon sx={{width: '5%'}}>
+                                        <ListItemIcon sx={{ width: '5%' }}>
                                             <AccountBoxIcon color="secondary" />
                                         </ListItemIcon>
-                                        <ListItemText sx={{width: '30%'}} primary={`${x.author_name_2}`} >
+                                        <ListItemText sx={{ width: '30%' }} primary={`${x.author_name_2}`} >
                                         </ListItemText>
 
-                                        <ListItemText sx={{width: '30%'}} primary={`${x.rank.toPrecision(5)}`} >
+                                        <ListItemText sx={{ width: '30%' }} primary={`${x.rank.toPrecision(5)}`} >
                                         </ListItemText>
                                     </ListItemButton>
                                 </ListItem>
